@@ -21,7 +21,7 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
         super.viewWillAppear(animated)
         
         let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as AppDelegate
+        let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
         
         
@@ -45,7 +45,7 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
         //Grab the DetailVC from Storyboard
         let object:AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController")!
         
-        let detailVC = object as DetailViewController
+        let detailVC = object as! DetailViewController
         //Populate view controller with data from the selected item
         detailVC.meme = self.memes[indexPath.row]
         

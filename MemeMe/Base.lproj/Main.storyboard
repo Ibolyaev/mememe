@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTH-R6-VT5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTH-R6-VT5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -65,7 +65,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BXF-9U-JKB"/>
-                                    <barButtonItem title="Cancel" id="Arf-dV-Wvj">
+                                    <barButtonItem systemItem="cancel" id="Arf-dV-Wvj">
                                         <connections>
                                             <segue destination="yTH-R6-VT5" kind="presentation" id="cLg-P6-Jrv"/>
                                         </connections>
@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="clV-Bh-mge" style="IBUITableViewCellStyleDefault" id="LPU-wJ-z34">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="tableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" textLabel="clV-Bh-mge" style="IBUITableViewCellStyleDefault" id="LPU-wJ-z34">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="LPU-wJ-z34" id="nRR-zC-WKK">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -268,7 +268,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="izB-K9-bbp">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="Vzs-wA-f1q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vzs-wA-f1q">
                             <connections>
                                 <segue destination="nOe-j6-mfE" kind="show" id="smf-Db-Mhg"/>
                             </connections>
@@ -323,6 +323,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sYd-tC-z4h"/>
+        <segue reference="smf-Db-Mhg"/>
     </inferredMetricsTieBreakers>
 </document>

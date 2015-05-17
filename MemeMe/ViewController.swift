@@ -114,13 +114,13 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     func getKeyboardHeight (notification: NSNotification) -> CGFloat {
     
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue // of CGRect
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
         
         
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         imageView.image = image
         
         shareButton.enabled = true
@@ -182,23 +182,19 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         var memedImage = generateMemedImage()
         
         
-
-        let activityViewController = UIActivityViewController(activityItems: NSArray(object: memedImage), applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         
-        
-        activityViewController.completionHandler = {(activityType, completed:Bool) in
+        activityViewController.completionWithItemsHandler = {activity, completed, items, error in
             if completed {
                 self.saveMeme()
                 self.dismissViewControllerAnimated(true, completion: nil)
                 return
             }
             
-            
         }
         
         self.presentViewController(activityViewController, animated: true, completion: nil)
-
-        
+       
         
     }
     
@@ -208,7 +204,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         
         // Add it to the memes array in the Application Delegate
         let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as AppDelegate
+        let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
         
         
