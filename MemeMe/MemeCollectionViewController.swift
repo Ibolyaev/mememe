@@ -27,7 +27,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     
  
     override func viewDidAppear(animated: Bool) {
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

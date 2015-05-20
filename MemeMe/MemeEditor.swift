@@ -22,6 +22,7 @@ class MemeEditor: UIViewController,UITextFieldDelegate,UIImagePickerControllerDe
     
     @IBOutlet weak var libraryButton: UIBarButtonItem!
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     
     @IBOutlet weak var upperToolBar: UIToolbar!
@@ -29,6 +30,7 @@ class MemeEditor: UIViewController,UITextFieldDelegate,UIImagePickerControllerDe
     
     @IBOutlet weak var bottomToolBar: UIToolbar!
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,9 @@ class MemeEditor: UIViewController,UITextFieldDelegate,UIImagePickerControllerDe
         bottomTextField.delegate = self
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = .Center
+        
+              
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -80,14 +85,14 @@ class MemeEditor: UIViewController,UITextFieldDelegate,UIImagePickerControllerDe
     func keyBoardWillShow (notification: NSNotification) {
         
         if bottomTextField.isFirstResponder() {
-        
-            self.view.frame.origin.y -= getKeyboardHeight(notification)}
-        
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide (notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            self.view.frame.origin.y += getKeyboardHeight(notification)}
+            view.frame.origin.y = 0
+        }
     }
     
 

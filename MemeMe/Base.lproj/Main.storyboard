@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nOe-j6-mfE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTH-R6-VT5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Meme Editor-->
         <scene sceneID="ER8-Sj-Cho">
             <objects>
-                <viewController title="Meme Editor" id="nOe-j6-mfE" customClass="MemeEditor" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditor" title="Meme Editor" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nOe-j6-mfE" customClass="MemeEditor" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6ql-R5-CUd"/>
                         <viewControllerLayoutGuide type="bottom" id="vN4-4X-9gD"/>
@@ -112,6 +112,7 @@
                         <outlet property="bottomTextField" destination="iH0-hy-MHU" id="7t4-tr-ah7"/>
                         <outlet property="bottomToolBar" destination="fFf-9a-CQX" id="V8f-cM-ckS"/>
                         <outlet property="cameraButton" destination="pKY-kR-f4U" id="zFb-S1-LOI"/>
+                        <outlet property="cancelButton" destination="Arf-dV-Wvj" id="mRz-oi-pAk"/>
                         <outlet property="imageView" destination="SOd-J1-Unw" id="7fp-Ho-hoK"/>
                         <outlet property="libraryButton" destination="8is-b4-XrE" id="NLR-sK-l2E"/>
                         <outlet property="shareButton" destination="rcN-1a-URT" id="IbB-00-jhi"/>

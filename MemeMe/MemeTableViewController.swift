@@ -28,7 +28,16 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
     
     override func viewDidAppear(animated: Bool) {
         
-        self.tableView.reloadData()
+        tableView.reloadData()
+        if (memes.count == 0) {
+            //Get instance of storyboard
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //Get instance of Editor, Remember to set an identifier in the storyboard.
+            var editMeme = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! MemeEditor
+            //Present it modally.
+            self.presentViewController(editMeme, animated: true, completion: nil)
+        }
+
         
     }
     
