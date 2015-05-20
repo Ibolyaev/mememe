@@ -23,7 +23,6 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
         
-          
     }
     
  
@@ -37,14 +36,12 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCell", forIndexPath: indexPath) as! CustomMemeCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCell",
+            forIndexPath: indexPath) as! CustomMemeCell
         let meme = memes[indexPath.item]
         cell.setText(meme.topText, bottomString: meme.bottomText)
         let imageView = UIImageView(image: meme.originalImage)
         cell.backgroundView = imageView
-        
-        
-        
         
         return cell
     }

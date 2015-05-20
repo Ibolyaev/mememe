@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yTH-R6-VT5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nOe-j6-mfE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--Meme Editor-->
         <scene sceneID="ER8-Sj-Cho">
             <objects>
-                <viewController title="Meme Editor" id="nOe-j6-mfE" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Meme Editor" id="nOe-j6-mfE" customClass="MemeEditor" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6ql-R5-CUd"/>
                         <viewControllerLayoutGuide type="bottom" id="vN4-4X-9gD"/>
@@ -323,6 +323,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="smf-Db-Mhg"/>
+        <segue reference="sYd-tC-z4h"/>
     </inferredMetricsTieBreakers>
 </document>

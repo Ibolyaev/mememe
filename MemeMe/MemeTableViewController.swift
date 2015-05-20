@@ -23,8 +23,6 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
-        
-        
 
     }
     
@@ -38,8 +36,6 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
         return self.memes.count
     }
     
-    
- 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         //Grab the DetailVC from Storyboard
@@ -66,19 +62,6 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
-    
-   
-    
-    
-    
-    /*
-    tableView numberOfRowsInSection – returns the number of rows in a tableview
-    tableView cellForRowAtIndexPath – returns the data need to be displayed in the tableview
-    tableView didSelectRowAtIndexPath – This method is used to perform an action when a tableViewCell is selected.
-*/
-       
-    
-
     
 }
 

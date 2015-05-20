@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditor.swift
 //  MemeMe
 //
 //  Created by Игорь Боляев on 14.05.15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class MemeEditor: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var topTextField: UITextField!
     
@@ -42,19 +42,12 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         
         topTextField.text = "TOP"
         topTextField.delegate = self
-        
-        
-        
         topTextField.defaultTextAttributes = memeTextAttributes
-         topTextField.text = "TOP"
         topTextField.textAlignment = .Center
         
         bottomTextField.text = "BOTTOM"
         bottomTextField.delegate = self
-        
-        
         bottomTextField.defaultTextAttributes = memeTextAttributes
-    
         bottomTextField.textAlignment = .Center
     }
     
@@ -65,6 +58,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         //Make subscribe to notification when keyboard appear
         subscribeToKeyboardNotifications()
     }
+    
     override func viewWillDisappear(animated: Bool) {
         self.unsubscribeFromKeyboardNotifications()
     }
@@ -90,10 +84,10 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
             self.view.frame.origin.y -= getKeyboardHeight(notification)}
         
     }
+    
     func keyboardWillHide (notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
             self.view.frame.origin.y += getKeyboardHeight(notification)}
-        
     }
     
 
@@ -116,15 +110,12 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
-        
-        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
         imageView.image = image
-        
         shareButton.enabled = true
-        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -138,9 +129,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         let picker = UIImagePickerController()
         
         picker.delegate = self
-        
         picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        
         self.presentViewController(picker, animated: true, completion: nil)
     }
 
@@ -150,9 +139,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         let picker = UIImagePickerController()
         
         picker.delegate = self
-        
         picker.sourceType = UIImagePickerControllerSourceType.Camera
-        
         self.presentViewController(picker, animated: true, completion: nil)
     }
     
@@ -169,7 +156,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
         
         upperToolBar.hidden = false
         bottomToolBar.hidden = false
@@ -194,7 +180,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         }
         
         self.presentViewController(activityViewController, animated: true, completion: nil)
-       
         
     }
     
@@ -206,7 +191,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
-        
         
     }
     
