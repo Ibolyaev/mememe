@@ -23,21 +23,30 @@ class MemeTableViewController : UIViewController, UITableViewDataSource, UITable
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
-
+        
+        if !appDelegate.didLaunch {
+        
+            if (memes.count == 0) {
+                
+                //Get instance of storyboard
+                var storyboard = UIStoryboard(name: "Main", bundle: nil)
+                //Get instance of Editor, Remember to set an identifier in the storyboard.
+                var editMeme = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! MemeEditor
+                //Present it modally.
+                self.presentViewController(editMeme, animated: true, completion: nil)
+                
+                //make didLaunch to true after 1st lauch of the app
+                appDelegate.didLaunch = true
+                
+                
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         
         tableView.reloadData()
-        if (memes.count == 0) {
-            //Get instance of storyboard
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //Get instance of Editor, Remember to set an identifier in the storyboard.
-            var editMeme = storyboard.instantiateViewControllerWithIdentifier("MemeEditor") as! MemeEditor
-            //Present it modally.
-            self.presentViewController(editMeme, animated: true, completion: nil)
-        }
-
+        
         
     }
     
